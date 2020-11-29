@@ -5,7 +5,7 @@ import useResults from '../hooks/useResults';
 import SearchBar from '../components/SearchBar';
 import ResultsList from '../components/ResultsList';
 
-const SearchScreen = ({ navigation }) => {
+const SearchScreen = () => {
   const [term, setTerm] = React.useState('');
   const [searchApi, results, errorMessage] = useResults();
 
@@ -14,8 +14,6 @@ const SearchScreen = ({ navigation }) => {
       return result.price === price;
     });
   };
-
-  console.log(results);
 
   return (
     <>
