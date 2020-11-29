@@ -7,6 +7,8 @@ const ResultsShowScreen = ({ navigation, route }) => {
 
   const id = route.params.id;
 
+  console.log(result.location.address1);
+
   const getResult = async id => {
     const response = await yelp.get(`/${id}`);
     setResult(response.data);
@@ -22,7 +24,9 @@ const ResultsShowScreen = ({ navigation, route }) => {
 
   return (
     <View>
-      <Text>{result.name}</Text>
+      <Text>{result.alias}</Text>
+      <Text>{result.location.address1}</Text>
+
       <FlatList
         data={result.photos}
         keyExtractor={photo => photo}
